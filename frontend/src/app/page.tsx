@@ -55,7 +55,7 @@ export default function HomePage() {
       setGhanam("");
 
       // Adjust URL if needed
-      const response = await fetch("http://127.0.0.1:5000/transform", {
+      const response = await fetch("https://mantra-to-ghanam.onrender.com/transform", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mantra }),

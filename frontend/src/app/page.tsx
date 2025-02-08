@@ -131,11 +131,6 @@ export default function HomePage() {
                 focus:outline-none
                 focus:ring-2
                 focus:ring-blue-500
-                
-                /* 
-                  We remove vertical padding & set line-height = 4rem 
-                  to center the placeholder (and single-line text).
-                */
                 px-3
                 py-0
                 pr-20
@@ -191,12 +186,28 @@ export default function HomePage() {
               {showInstructions ? <ChevronUpIcon /> : <ChevronDownIcon />}
             </div>
 
-            {/* Only show if expanded */}
+            {/* Formatted Instructions */}
             {showInstructions && (
-              <div className="mt-2">
-                Here are some instructions for the user. They can be multiple
-                lines of text, and this box will expand as needed. You can
-                replace this placeholder with any instructions you wish.
+              <div className="mt-2 text-left">
+                <h3 className="text-md font-bold mb-2">
+                  How to Use the Mantra to Ghanam Converter
+                </h3>
+                <ol className="list-decimal list-inside space-y-2 text-sm">
+                  <li>
+                    <span className="font-bold">Enter Your Mantra:</span> In the large text field on the page, paste or type your mantra.
+                    <br />
+                    <span className="italic">Tip:</span> You can include the <code>|</code> character to mark specific segments (this is optional).
+                  </li>
+                  <li>
+                    <span className="font-bold">Submit Your Mantra:</span> Once you have entered your text, click the <span className="font-semibold">Convert</span> button below the text field.
+                  </li>
+                  <li>
+                    <span className="font-bold">View the Transformed Text:</span> After clicking the button, the application will process your input and display the transformed (Ghanam) version of your mantra below the form.
+                  </li>
+                  <li>
+                    <span className="font-bold">Try Again:</span> If you’d like to convert a different mantra, simply update the text in the field and click <span className="font-semibold">Convert</span> again.
+                  </li>
+                </ol>
               </div>
             )}
           </div>
@@ -220,3 +231,4 @@ export default function HomePage() {
     </main>
   );
 }
+

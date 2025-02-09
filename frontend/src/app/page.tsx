@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { IBM_Plex_Mono } from "@next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 
 // Inline SVG chevrons for the instructions box
 function ChevronDownIcon() {
@@ -73,9 +73,8 @@ export default function HomePage() {
       } else {
         setErrorMsg("Unexpected response from server.");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
-      setErrorMsg(error.message || "An error occurred.");
     } finally {
       setLoading(false);
     }
